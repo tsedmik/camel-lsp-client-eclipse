@@ -20,15 +20,13 @@
 		<integrationTestsSystemProperties>-Dreddeer.skipUnfixedIssues=${reddeer.skipUnfixedIssues} -Dorg.eclipse.swt.internal.gtk.disablePrinting</integrationTestsSystemProperties>
 		<reddeerConfig>-Drd.config=${rd.config}</reddeerConfig>
 		<enable.debug.log>false</enable.debug.log>
-		<systemProperties>${integrationTestsSystemProperties} ${reddeerConfig}${ideConfig}</systemProperties>
-		<test.class>AllTests</test.class>
+		<systemProperties>${integrationTestsSystemProperties} ${reddeerConfig} ${ideConfig}</systemProperties>
 		<customization.file>resources/settings/plugin_customization.ini</customization.file>
 		<maven.repo>${project.build.directory}/requirements/repository/</maven.repo>
 		<staging.repos>false</staging.repos>
 		<rd.skipUnfixedIssues>true</rd.skipUnfixedIssues>
 		<skipUITests>false</skipUITests>
-		<testUIClass>SmokeTests</testUIClass>
-		<skipRequirements>false</skipRequirements>
+		<testUIClass>CamelLSPCompletionTest</testUIClass>
 		<lsp.client.site>https://camel-tooling.github.io/camel-lsp-client-eclipse-update-site/updatesite/nightly/</lsp.client.site>
 	</properties>
 
@@ -108,12 +106,6 @@
 						<dependency>
 							<type>p2-installable-unit</type>
 							<artifactId>org.eclipse.wst.xml.ui</artifactId>
-							<version>0.0.0</version>
-						</dependency>
-						<!-- Camel LSP client feature -->
-						<dependency>
-							<type>p2-installable-unit</type>
-							<artifactId>com.github.cameltooling.lsp.eclipse.client.feature.feature.group</artifactId>
 							<version>0.0.0</version>
 						</dependency>
 					</dependencies>

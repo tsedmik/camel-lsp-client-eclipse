@@ -32,13 +32,17 @@ You also need to specify target platform
 
 Executing only UI tests should look like as follows
 
-    mvn clean verify -pl camel-lsp-target-platform,com.github.camel-tooling.lsp.eclipse.client.tests.ui/tests/com.github.cameltooling.lsp.ui.tests -am \
-    	-DskipUITests=false \
-    	-Dtycho.localArtifacts=ignore \
-    	-Dtycho.baseline=disable \
-    	-DskipBaselineComparison=true \
-    	-DfailIfNoTests=false \
-    	-Dtest=CamelLSPCompletionTest
+    mvn clean verify -pl \
+        camel-lsp-target-platform, \
+        com.github.camel-tooling.lsp.eclipse.client.tests.ui/plugins/com.github.cameltooling.lsp.reddeer, \
+        com.github.camel-tooling.lsp.eclipse.client.tests.ui/tests/com.github.cameltooling.lsp.ui.tests \
+        -am \
+        -DskipUITests=false \
+        -Dtycho.localArtifacts=ignore \
+        -Dtycho.baseline=disable \
+        -DskipBaselineComparison=true \
+        -DfailIfNoTests=false \
+        -Dtest=CamelLSPCompletionTest
 
 ## Debugging tests when running from command line
 
